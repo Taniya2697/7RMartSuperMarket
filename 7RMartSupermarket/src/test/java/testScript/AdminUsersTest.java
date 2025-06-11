@@ -9,14 +9,15 @@ import automationCore.Base;
 import pages.AdminUsersPage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
+import utilities.RandomDataUtility;
 
 public class AdminUsersTest extends Base
 {
 	
-	@Test
+	@Test(description="adding new user to the users list",retryAnalyzer=retry.Retry.class)
 	public void verifyThatTheUserIsAbleToAddNewAdminUSer() throws IOException
 	{
-		String username=ExcelUtility.getStringData(0, 0, "LoginPage");
+		String username=ExcelUtility.getStringData(10, 0, "LoginPage");
 		String password=ExcelUtility.getStringData(0, 1, "LoginPage");
 		LoginPage loginpage=new LoginPage(driver);
 		loginpage.enterUserNameOnUserNameField(username);
@@ -26,8 +27,11 @@ public class AdminUsersTest extends Base
 		AdminUsersPage adminuserspage=new AdminUsersPage(driver);
 		adminuserspage.clickOnAdminUsersMoreInfoTab();
 		adminuserspage.clickOnNewButtonToAddNewAdminUser();
-		adminuserspage.enterTheAdminUserNameInTheUserNameField();
-		adminuserspage.enterTheAdminPasswordInPasswordField();
+		RandomDataUtility random=new RandomDataUtility();
+		String usernameadmin=random.createRandomUserName();
+		adminuserspage.enterTheAdminUserNameInTheUserNameField(usernameadmin);
+		String passwordadmin=random.createRandomPassword();
+		adminuserspage.enterTheAdminPasswordInPasswordField(passwordadmin);
 		adminuserspage.selectTheAdminUserTypeFromTheDropDownList();
 		adminuserspage.saveTheDetailsEnteredOfNewUser();
 		String actual=adminuserspage.alertUserCreatedSuccessfullyDisplayed();

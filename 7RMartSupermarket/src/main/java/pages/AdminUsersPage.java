@@ -38,14 +38,14 @@ public class AdminUsersPage
 		newbutton.click();
 	}
 	
-	public void enterTheAdminUserNameInTheUserNameField()
+	public void enterTheAdminUserNameInTheUserNameField(String usernameadmin)
 	{
-		usernamefield.sendKeys("Akhil TR");
+		usernamefield.sendKeys(usernameadmin);
 	}
 	
-	public void enterTheAdminPasswordInPasswordField()
+	public void enterTheAdminPasswordInPasswordField(String passwordadmin)
 	{
-		passwordfield.sendKeys("Aadhi@1234");
+		passwordfield.sendKeys(passwordadmin);
 	}
 	
 	public void selectTheAdminUserTypeFromTheDropDownList()
