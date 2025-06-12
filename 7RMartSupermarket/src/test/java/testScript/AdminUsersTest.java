@@ -39,7 +39,7 @@ public class AdminUsersTest extends Base
 		Assert.assertEquals(actual, expected,"User was not able to add the new admin user");
 	}
 	
-	@Test
+	@Test(description="searching the newly added admin user from the users list")
 	public void verifyThatTheUserIsAbleToSearchAndFindTheNewlyAddedUser() throws IOException
 	{
 		String username=ExcelUtility.getStringData(0, 0, "LoginPage");

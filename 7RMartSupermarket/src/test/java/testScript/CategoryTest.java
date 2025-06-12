@@ -12,7 +12,7 @@ import utilities.ExcelUtility;
 
 public class CategoryTest extends Base
 {
-	@Test
+	@Test(description="Adding new category to the category list")
 	public void verifyThatTheUSerIsAbleToAddNewCategory() throws IOException
 	{
 		String username=ExcelUtility.getStringData(0, 0, "LoginPage");
@@ -37,7 +37,7 @@ public class CategoryTest extends Base
 		Assert.assertEquals(actual, expected,"User was not able to add the new category");
 	}
 	
-	@Test
+	@Test(description="Searching the newly added category from the category list")
 	public void verifyThatTheUserIsAbleToSearchAndFindAddedCategories() throws IOException
 	{
 		String username=ExcelUtility.getStringData(0, 0, "LoginPage");
