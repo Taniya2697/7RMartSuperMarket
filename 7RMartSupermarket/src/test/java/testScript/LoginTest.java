@@ -11,7 +11,7 @@ import utilities.ExcelUtility;
 
 public class LoginTest extends Base{
 	
-	@Test(description="Signing in to the application using valid credentials",priority=1)
+	@Test(description="Signing in to the application using valid credentials",priority=1,groups= {"smoke"})
 	public void verifyUserLoginWithValidCredentials() throws IOException
 	{
 		String username=ExcelUtility.getStringData(0, 0, "LoginPage");
@@ -27,7 +27,7 @@ public class LoginTest extends Base{
 		Assert.assertEquals(actual, expected, "User was unable to login with valid credentails");
 	}
 	
-	@Test(description="Signing in to the application using valid username and invalid password",priority=2)
+	@Test(description="Signing in to the application using valid username and invalid password",priority=2,groups= {"smoke"})
 	public void verifyUserLoginWithInvalidUserNameAndValidPassword() throws IOException
 	{
 		String username=ExcelUtility.getStringData(1, 0, "LoginPage");

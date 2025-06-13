@@ -22,7 +22,7 @@ public class Base
 	Properties prop;
 	FileInputStream file;
 	public WebDriver driver;
-	@BeforeMethod
+	@BeforeMethod(alwaysRun=true)
 	@Parameters("browsers")
 	public void initializeBrowser(String browsers) throws Exception
 	{
@@ -33,11 +33,11 @@ public class Base
 		{
 			driver=new ChromeDriver();
 		}
-		if(browsers.equalsIgnoreCase("Edge"))
+		else if(browsers.equalsIgnoreCase("Edge"))
 		{
 			driver=new EdgeDriver();
 		}
-		if(browsers.equalsIgnoreCase("Firefox"))
+		else if(browsers.equalsIgnoreCase("Firefox"))
 		{
 			driver=new FirefoxDriver();
 		}
@@ -50,7 +50,7 @@ public class Base
 		driver.manage().window().maximize();
 		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 	}
-	@AfterMethod
+	@AfterMethod(alwaysRun=true)
 	public void driverQuit(ITestResult iTestResult) throws IOException
 	{
 	if(iTestResult.getStatus()==ITestResult.FAILURE)
@@ -58,7 +58,7 @@ public class Base
 	ScreenShotUtility screenShot=new ScreenShotUtility();
 	screenShot.getScreenshot(driver, iTestResult.getName());
 	}
-	//driver.quit();
+	driver.quit();
 
 	}
 
