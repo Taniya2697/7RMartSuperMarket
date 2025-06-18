@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import constants.Constant;
+
 public class ManageNewsPage {
 	public WebDriver driver;
 
@@ -14,8 +16,7 @@ public class ManageNewsPage {
 	}
 
 	// Add new news web elements
-	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news' and  @class='small-box-footer']")
-	private WebElement Managenewsmoreinfo;
+	
 	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/news/add']")
 	private WebElement newbutton;
 	@FindBy(xpath = "//textarea[@id='news']")
@@ -35,20 +36,21 @@ public class ManageNewsPage {
 	@FindBy(xpath = "//td[text()='Heavy Rainfall Expected Tommorrow']")
 	private WebElement searchresult;
 
-	public void clickOnManageNewsTab() {
-		Managenewsmoreinfo.click();
-	}
+	
 
-	public void clickonNewButtonToAddNewNews() {
+	public ManageNewsPage clickonNewButtonToAddNewNews() {
 		newbutton.click();
+		return this;
 	}
 
-	public void enterTheNewsInTheTextFieldDisplayed() {
-		enterthenewstextfield.sendKeys("Heavy Rainfall Expected Tommorrow");
+	public ManageNewsPage enterTheNewsInTheTextFieldDisplayed() {
+		enterthenewstextfield.sendKeys(Constant.NEWSTOADD);
+		return this;
 	}
 
-	public void clickOnSaveButtonToSaveTheNewNewsAdded() {
+	public ManageNewsPage clickOnSaveButtonToSaveTheNewNewsAdded() {
 		savebutton.click();
+		return this;
 	}
 
 	// assertion
@@ -56,16 +58,19 @@ public class ManageNewsPage {
 		return newscreatedsuccessfullyalert.isDisplayed();
 	}
 
-	public void clickOnSearchButton() {
+	public ManageNewsPage clickOnSearchButton() {
 		searchbutton.click();
+		return this;
 	}
 
-	public void enterTheNewsToBeSearchedInTheTextFieldProvided() {
-		searchtextfield.sendKeys("Heavy Rainfall Expected Tommorrow");
+	public ManageNewsPage enterTheNewsToBeSearchedInTheTextFieldProvided() {
+		searchtextfield.sendKeys(Constant.SEARCHNEWS);
+		return this;
 	}
 
-	public void clickOnSearchSubmitButton() {
+	public ManageNewsPage clickOnSearchSubmitButton() {
 		searchsubmitbutton.click();
+		return this;
 	}
 
 	// assertion

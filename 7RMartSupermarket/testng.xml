@@ -8,10 +8,10 @@
 	<test thread-count="5" name="Test">
 
 		<classes>
-			<class name="testScript.AdminUsersTest">
+			<class name="testScript.ManageNewsTest">
 				<methods>
-					<include name="verifyThatTheUserIsAbleToAddNewAdminUSer"></include>
-					<include name="verifyThatTheUserIsAbleToSearchAndFindTheNewlyAddedUser"></include>
+					<include name="verifyThatUserIsAbleToAddNewNewsInTheApplication"></include>
+					<include name="verifyThatUserIsAbleToSearchAndFindTheAddedNews"></include>
 				</methods>
 			</class>
 

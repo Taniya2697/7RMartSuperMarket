@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-18T21:08:26 IST" name="Suite" finished-at="2025-06-18T21:08:40 IST" duration-ms="14042">
+  <suite started-at="2025-06-18T23:50:00 IST" name="Suite" finished-at="2025-06-18T23:50:17 IST" duration-ms="16973">
     <groups>
     </groups>
-    <test started-at="2025-06-18T21:08:26 IST" name="Test" finished-at="2025-06-18T21:08:40 IST" duration-ms="14042">
-      <class name="testScript.AdminUsersTest">
-        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testScript.AdminUsersTest@1f9e9475]" started-at="2025-06-18T21:08:26 IST" name="initializeBrowser" finished-at="2025-06-18T21:08:29 IST" duration-ms="3379" status="PASS">
+    <test started-at="2025-06-18T23:50:00 IST" name="Test" finished-at="2025-06-18T23:50:17 IST" duration-ms="16973">
+      <class name="testScript.ManageNewsTest">
+        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testScript.ManageNewsTest@1f9e9475]" started-at="2025-06-18T23:50:00 IST" name="initializeBrowser" finished-at="2025-06-18T23:50:06 IST" duration-ms="6285" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,22 +18,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeBrowser -->
-        <test-method signature="verifyThatTheUserIsAbleToAddNewAdminUSer()[pri:0, instance:testScript.AdminUsersTest@1f9e9475]" started-at="2025-06-18T21:08:29 IST" name="verifyThatTheUserIsAbleToAddNewAdminUSer" description="adding new user to the users list" finished-at="2025-06-18T21:08:35 IST" duration-ms="5915" status="PASS">
+        <test-method signature="verifyThatUserIsAbleToAddNewNewsInTheApplication()[pri:0, instance:testScript.ManageNewsTest@1f9e9475]" started-at="2025-06-18T23:50:06 IST" name="verifyThatUserIsAbleToAddNewNewsInTheApplication" description="Adding new news to the news list" finished-at="2025-06-18T23:50:11 IST" duration-ms="5032" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyThatTheUserIsAbleToAddNewAdminUSer -->
-        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testScript.AdminUsersTest@1f9e9475]" started-at="2025-06-18T21:08:35 IST" name="driverQuit" finished-at="2025-06-18T21:08:35 IST" duration-ms="1" status="PASS">
+        </test-method> <!-- verifyThatUserIsAbleToAddNewNewsInTheApplication -->
+        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testScript.ManageNewsTest@1f9e9475]" started-at="2025-06-18T23:50:11 IST" name="driverQuit" finished-at="2025-06-18T23:50:11 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyThatTheUserIsAbleToAddNewAdminUSer status=SUCCESS method=AdminUsersTest.verifyThatTheUserIsAbleToAddNewAdminUSer()[pri:0, instance:testScript.AdminUsersTest@1f9e9475] output={null}]]]>
+                <![CDATA[[TestResult name=verifyThatUserIsAbleToAddNewNewsInTheApplication status=SUCCESS method=ManageNewsTest.verifyThatUserIsAbleToAddNewNewsInTheApplication()[pri:0, instance:testScript.ManageNewsTest@1f9e9475] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverQuit -->
-        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testScript.AdminUsersTest@1f9e9475]" started-at="2025-06-18T21:08:35 IST" name="initializeBrowser" finished-at="2025-06-18T21:08:37 IST" duration-ms="2182" status="PASS">
+        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testScript.ManageNewsTest@1f9e9475]" started-at="2025-06-18T23:50:11 IST" name="initializeBrowser" finished-at="2025-06-18T23:50:14 IST" duration-ms="2636" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -44,22 +44,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeBrowser -->
-        <test-method signature="verifyThatTheUserIsAbleToSearchAndFindTheNewlyAddedUser()[pri:0, instance:testScript.AdminUsersTest@1f9e9475]" started-at="2025-06-18T21:08:37 IST" name="verifyThatTheUserIsAbleToSearchAndFindTheNewlyAddedUser" description="searching the newly added admin user from the users list" finished-at="2025-06-18T21:08:40 IST" duration-ms="2505" status="PASS">
+        <test-method signature="verifyThatUserIsAbleToSearchAndFindTheAddedNews()[pri:0, instance:testScript.ManageNewsTest@1f9e9475]" started-at="2025-06-18T23:50:14 IST" name="verifyThatUserIsAbleToSearchAndFindTheAddedNews" description="Searching newly added news from the news list" finished-at="2025-06-18T23:50:17 IST" duration-ms="2953" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyThatTheUserIsAbleToSearchAndFindTheNewlyAddedUser -->
-        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testScript.AdminUsersTest@1f9e9475]" started-at="2025-06-18T21:08:40 IST" name="driverQuit" finished-at="2025-06-18T21:08:40 IST" duration-ms="0" status="PASS">
+        </test-method> <!-- verifyThatUserIsAbleToSearchAndFindTheAddedNews -->
+        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testScript.ManageNewsTest@1f9e9475]" started-at="2025-06-18T23:50:17 IST" name="driverQuit" finished-at="2025-06-18T23:50:17 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyThatTheUserIsAbleToSearchAndFindTheNewlyAddedUser status=SUCCESS method=AdminUsersTest.verifyThatTheUserIsAbleToSearchAndFindTheNewlyAddedUser()[pri:0, instance:testScript.AdminUsersTest@1f9e9475] output={null}]]]>
+                <![CDATA[[TestResult name=verifyThatUserIsAbleToSearchAndFindTheAddedNews status=SUCCESS method=ManageNewsTest.verifyThatUserIsAbleToSearchAndFindTheAddedNews()[pri:0, instance:testScript.ManageNewsTest@1f9e9475] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverQuit -->
-      </class> <!-- testScript.AdminUsersTest -->
+      </class> <!-- testScript.ManageNewsTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

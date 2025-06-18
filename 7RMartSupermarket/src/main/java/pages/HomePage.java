@@ -19,8 +19,14 @@ public class HomePage {
 	private WebElement logoutoption;
 	@FindBy(xpath = "//button[@class='btn btn-dark btn-block']")
 	private WebElement signinbutton;
+	
+	//chaining
 	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin' and @class='small-box-footer']")
 	private WebElement adminusersmoreinfo;
+	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-category' and @class='active nav-link']")
+	private WebElement managecategorytab;
+	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news' and  @class='small-box-footer']")
+	private WebElement Managenewsmoreinfo;
 
 	
 	public HomePage clickOnAdminDropdownLink() {
@@ -35,9 +41,24 @@ public class HomePage {
 	public String signInPageDisplayed() {
 		return signinbutton.getText();
 	}
+	
+	//Chaining of adminusersmodule
+	
 	public AdminUsersPage clickOnAdminUsersMoreInfoTab() {
 		adminusersmoreinfo.click();
 		return new AdminUsersPage(driver);
+	}
+	
+	//chaining of managecategorymodule
+	public CategoryPage clickOnManageCategoryTab() {
+		managecategorytab.click();
+		return new CategoryPage(driver);
+	}
+	
+	//chaining of managenewsmodule
+	public ManageNewsPage clickOnManageNewsTab() {
+		Managenewsmoreinfo.click();
+		return new ManageNewsPage(driver);
 	}
 
 }

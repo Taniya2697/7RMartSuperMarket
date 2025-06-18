@@ -52,7 +52,7 @@ public class Base {
 			ScreenShotUtility screenShot = new ScreenShotUtility();
 			screenShot.getScreenshot(driver, iTestResult.getName());
 		}
-		// driver.quit();
+		driver.quit();
 
 	}
 

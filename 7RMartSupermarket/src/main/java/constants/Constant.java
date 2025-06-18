@@ -7,5 +7,9 @@ public class Constant {
 			+ "\\src\\main\\resources\\config.properties";
 	public static final String USERTYPE="Staff";
 	public static final String SEARCHADMINUSERNAME="Akhil TR";
+	public static final String NEWCATEGORYNAME="Manage Customers";
+	public static final String SEARCHCATEGORYNAME="Couponss";
+	public static final String NEWSTOADD="EarthQuake Alert";
+	public static final String SEARCHNEWS="Heavy Rainfall Expected Tommorrow";
 
 }

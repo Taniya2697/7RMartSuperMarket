@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import constants.Constant;
 import utilities.PageUtility;
+import utilities.WaitUtility;
 
 public class CategoryPage {
 	public WebDriver driver;
@@ -22,8 +23,7 @@ public class CategoryPage {
 	}
 
 	// WebElements to create category
-	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-category' and @class='active nav-link']")
-	private WebElement managecategorytab;
+
 	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/Category/add']")
 	private WebElement newbutton;
 	@FindBy(xpath = "//input[@id='category']")
@@ -51,47 +51,71 @@ public class CategoryPage {
 	@FindBy(xpath = "//td[text()='Couponss']")
 	private WebElement searchcategoryresult;
 
-	public void clickOnManageCategoryTab() {
-		managecategorytab.click();
-	}
-
-	public void clickOnNewButtonToCreateNewCategory() {
+	public CategoryPage clickOnNewButtonToCreateNewCategory() {
 		newbutton.click();
+		return this;
 	}
 
-	public void enterCategoryNameOnCategoryField() {
-		categoryfield.sendKeys("Coupon Code");
+	public CategoryPage enterCategoryNameOnCategoryField() {
+		categoryfield.sendKeys(Constant.NEWCATEGORYNAME);
+		return this;
 	}
 
-	public void clickOnDiscount() {
+	public CategoryPage clickOnDiscount() {
 		discount.click();
+		return this;
 	}
 
-	public void scrollDown() {
+	public CategoryPage scrollDown() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,700)", "");
+		return this;
 	}
 
-	public void uploadImage() {
+	public CategoryPage uploadImage() {
 		choosefilebutton.sendKeys(Constant.TESTIMAGEFILE);
+		return this;
 	}
 
-	public void selectTheRadioButtonOptionForShowOnTopMenu() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-		wait.until(ExpectedConditions.elementToBeClickable(showontopmenunooption));
-		showontopmenunooption.click();
+	public CategoryPage selectTheRadioButtonOptionForShowOnTopMenu() {
+		WaitUtility wait = new WaitUtility();
+		wait.waitUntilElementToBeClickable(driver, showontopmenunooption);
+		PageUtility page = new PageUtility();
+		page.selectRadioButton(showontopmenunooption);
+		return this;
+
+		/*
+		 * showontopmenunooption.click(); WebDriverWait wait = new WebDriverWait(driver,
+		 * Duration.ofSeconds(5));
+		 * wait.until(ExpectedConditions.elementToBeClickable(showontopmenunooption));
+		 * showontopmenunooption.click();
+		 */
+
 	}
 
-	public void selectTheRadioButtonOptionForShowOnLeftMenu() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-		wait.until(ExpectedConditions.elementToBeClickable(showonleftmenunooption));
-		showonleftmenunooption.click();
+	public CategoryPage selectTheRadioButtonOptionForShowOnLeftMenu() {
+		WaitUtility wait = new WaitUtility();
+		wait.waitUntilElementToBeClickable(driver, showonleftmenunooption);
+		PageUtility page = new PageUtility();
+		page.selectRadioButton(showonleftmenunooption);
+		return this;
+
+		/*
+		 * WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		 * wait.until(ExpectedConditions.elementToBeClickable(showonleftmenunooption));
+		 * showonleftmenunooption.click();
+		 */
 	}
 
-	public void clickOnSaveButton() {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,300)", "");
+	public CategoryPage clickOnSaveButton() {
+		PageUtility page = new PageUtility();
+		page.scrollDown(driver);
 		savebutton.click();
+		return this;
+		/*
+		 * JavascriptExecutor js = (JavascriptExecutor) driver;
+		 * js.executeScript("window.scrollBy(0,300)", "");
+		 */
 
 	}
 
@@ -100,18 +124,22 @@ public class CategoryPage {
 		return categorycreatedsuccessfullyalert.isDisplayed();
 	}
 
-	public void clickOntheSearchButtonFromListCategoriesPage() {
+	public CategoryPage clickOntheSearchButtonFromListCategoriesPage() {
 		listcategorysearchbutton.click();
+		return this;
 	}
 
-	public void enterTheKeywordToBeSearchedInTheCategoryTextField() {
-		searchlistcategoriescategoryfield.sendKeys("Couponss");
+	public CategoryPage enterTheKeywordToBeSearchedInTheCategoryTextField() {
+		searchlistcategoriescategoryfield.sendKeys(Constant.SEARCHCATEGORYNAME);
+		return this;
 	}
 
-	public void clickOnSearchButtonToIntiliazeSearchingTheEnteredKeyword() {
+	public CategoryPage clickOnSearchButtonToIntiliazeSearchingTheEnteredKeyword() {
 		searchlistcategoriessearchbutton.click();
+		return this;
 	}
 
+	// asssertion
 	public String listCategoriesPageDisplayed() {
 		return searchcategoryresult.getText();
 	}

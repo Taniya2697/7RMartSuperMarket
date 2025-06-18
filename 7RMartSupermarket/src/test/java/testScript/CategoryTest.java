@@ -7,29 +7,26 @@ import org.testng.annotations.Test;
 
 import automationCore.Base;
 import pages.CategoryPage;
+import pages.HomePage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
 
 public class CategoryTest extends Base {
 	@Test(description = "Adding new category to the category list")
 	public void verifyThatTheUSerIsAbleToAddNewCategory() throws IOException {
+		HomePage homepage;
 		String username = ExcelUtility.getStringData(0, 0, "LoginPage");
 		String password = ExcelUtility.getStringData(0, 1, "LoginPage");
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUserNameOnUserNameField(username);
-		loginpage.enterPasswordOnPasswordField(password);
-		loginpage.clickOnSignInButton();
+		loginpage.enterUserNameOnUserNameField(username).enterPasswordOnPasswordField(password);
+		homepage = loginpage.clickOnSignInButton();
 
 		CategoryPage categorypage = new CategoryPage(driver);
-		categorypage.clickOnManageCategoryTab();
-		categorypage.clickOnNewButtonToCreateNewCategory();
-		categorypage.enterCategoryNameOnCategoryField();
-		categorypage.clickOnDiscount();
-		categorypage.scrollDown();
-		categorypage.uploadImage();
-		categorypage.selectTheRadioButtonOptionForShowOnTopMenu();
-		categorypage.selectTheRadioButtonOptionForShowOnLeftMenu();
-		categorypage.clickOnSaveButton();
+		homepage.clickOnManageCategoryTab();
+		categorypage.clickOnNewButtonToCreateNewCategory().enterCategoryNameOnCategoryField().clickOnDiscount()
+				.scrollDown().uploadImage().selectTheRadioButtonOptionForShowOnTopMenu()
+				.selectTheRadioButtonOptionForShowOnLeftMenu().clickOnSaveButton();
+
 		boolean isAddCategoryPageDisplayed = categorypage.CategoryCreatedSuccessfullyAlertDisplayed();
 		Assert.assertTrue(isAddCategoryPageDisplayed, "User is unable to add the category.");
 		/*
@@ -41,18 +38,17 @@ public class CategoryTest extends Base {
 
 	@Test(description = "Searching the newly added category from the category list")
 	public void verifyThatTheUserIsAbleToSearchAndFindAddedCategories() throws IOException {
+		HomePage homepage;
 		String username = ExcelUtility.getStringData(0, 0, "LoginPage");
 		String password = ExcelUtility.getStringData(0, 1, "LoginPage");
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUserNameOnUserNameField(username);
-		loginpage.enterPasswordOnPasswordField(password);
-		loginpage.clickOnSignInButton();
+		loginpage.enterUserNameOnUserNameField(username).enterPasswordOnPasswordField(password);
+		homepage = loginpage.clickOnSignInButton();
 
 		CategoryPage categorypage = new CategoryPage(driver);
-		categorypage.clickOnManageCategoryTab();
-		categorypage.clickOntheSearchButtonFromListCategoriesPage();
-		categorypage.enterTheKeywordToBeSearchedInTheCategoryTextField();
-		categorypage.clickOnSearchButtonToIntiliazeSearchingTheEnteredKeyword();
+		homepage.clickOnManageCategoryTab();
+		categorypage.clickOntheSearchButtonFromListCategoriesPage().enterTheKeywordToBeSearchedInTheCategoryTextField()
+				.clickOnSearchButtonToIntiliazeSearchingTheEnteredKeyword();
 		String actual = categorypage.listCategoriesPageDisplayed();
 		String expected = "Couponss";
 		Assert.assertEquals(actual, expected, "user was not able to find the searched result");
