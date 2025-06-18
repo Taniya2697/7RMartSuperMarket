@@ -7,12 +7,12 @@ public class ExtentReportUtility {
 	public static final ExtentReports extentReports = new ExtentReports();
 
 	public synchronized static ExtentReports createExtentReports() {
-	ExtentSparkReporter reporter = new ExtentSparkReporter("./extent-reports/extent-report.html");
-	reporter.config().setReportName("7RMartSupermarket");
-	extentReports.attachReporter(reporter);
-	extentReports.setSystemInfo("Organization", "Obsqura");
-	extentReports.setSystemInfo("Name", " Taniya "); 
-	return extentReports;
+		ExtentSparkReporter reporter = new ExtentSparkReporter("./extent-reports/extent-report.html");
+		reporter.config().setReportName("7RMartSupermarket");
+		extentReports.attachReporter(reporter);
+		extentReports.setSystemInfo("Organization", "Obsqura");
+		extentReports.setSystemInfo("Name", " Taniya ");
+		return extentReports;
 	}
 
 }
