@@ -18,11 +18,10 @@ public class HomeTest extends Base {
 		String password = ExcelUtility.getStringData(0, 1, "LoginPage");
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUserNameOnUserNameField(username).enterPasswordOnPasswordField(password);
-		homepage=loginpage.clickOnSignInButton();
+		homepage = loginpage.clickOnSignInButton();
 
-		
 		homepage.clickOnAdminDropdownLink();
-		loginpage=homepage.clickOnLogoutOption();
+		loginpage = homepage.clickOnLogoutOption();
 		String actual = homepage.signInPageDisplayed();
 		String expected = "Sign In";
 		Assert.assertEquals(actual, expected, "User has not logged out from the application");

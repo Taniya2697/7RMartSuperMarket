@@ -46,7 +46,7 @@ public class CategoryTest extends Base {
 		homepage = loginpage.clickOnSignInButton();
 
 		CategoryPage categorypage;
-		categorypage=homepage.clickOnManageCategoryTab();
+		categorypage = homepage.clickOnManageCategoryTab();
 		categorypage.clickOntheSearchButtonFromListCategoriesPage().enterTheKeywordToBeSearchedInTheCategoryTextField()
 				.clickOnSearchButtonToIntiliazeSearchingTheEnteredKeyword();
 		String actual = categorypage.listCategoriesPageDisplayed();

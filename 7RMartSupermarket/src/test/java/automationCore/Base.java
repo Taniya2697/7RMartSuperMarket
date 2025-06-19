@@ -42,7 +42,7 @@ public class Base {
 		driver.get(prop.getProperty("url"));
 		driver.manage().window().maximize();
 		// driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		WaitUtility wait=new WaitUtility();
+		WaitUtility wait = new WaitUtility();
 		wait.implicitWait(driver);
 	}
 

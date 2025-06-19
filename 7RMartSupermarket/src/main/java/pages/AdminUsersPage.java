@@ -21,7 +21,7 @@ public class AdminUsersPage {
 	}
 
 	// WebElements to add new admin user
-	
+
 	@FindBy(xpath = "//a[@class='btn btn-rounded btn-danger']")
 	private WebElement newbutton;
 	@FindBy(xpath = "//input[@id='username']")
@@ -47,8 +47,6 @@ public class AdminUsersPage {
 	@FindBy(xpath = "//td[text()='Akhil TR']")
 	private WebElement searchmanageadminuserresult;
 
-	
-
 	public AdminUsersPage clickOnNewButtonToAddNewAdminUser() {
 		newbutton.click();
 		return this;
@@ -65,16 +63,16 @@ public class AdminUsersPage {
 	}
 
 	public AdminUsersPage selectTheAdminUserTypeFromTheDropDownList() {
-		PageUtility page=new PageUtility();
-		page.selectDropdownWithVisibleText(usertypedropdown,Constant.USERTYPE);
+		PageUtility page = new PageUtility();
+		page.selectDropdownWithVisibleText(usertypedropdown, Constant.USERTYPE);
 		return this;
-		
-		//Select select = new Select(usertypedropdown);
-		//select.selectByVisibleText("Staff");
+
+		// Select select = new Select(usertypedropdown);
+		// select.selectByVisibleText("Staff");
 	}
 
 	public AdminUsersPage saveTheDetailsEnteredOfNewUser() {
-		WaitUtility wait=new WaitUtility();
+		WaitUtility wait = new WaitUtility();
 		wait.waitUntilElementToBeClickable(driver, savebutton);
 		savebutton.click();
 		return this;
@@ -96,10 +94,10 @@ public class AdminUsersPage {
 	}
 
 	public AdminUsersPage selectTheUserTypeToBeSearchedFromTheUserTypeDropDown() {
-		PageUtility page=new PageUtility();
+		PageUtility page = new PageUtility();
 		page.selectDropdownWithVisibleText(searchusertypedropdown, Constant.USERTYPE);
-		//Select select = new Select(searchusertypedropdown);
-		//select.selectByVisibleText("Staff");
+		// Select select = new Select(searchusertypedropdown);
+		// select.selectByVisibleText("Staff");
 		return this;
 	}
 

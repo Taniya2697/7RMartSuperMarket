@@ -47,7 +47,7 @@ public class ManageNewsTest extends Base {
 		homepage = loginpage.clickOnSignInButton();
 
 		ManageNewsPage managenewspage;
-		managenewspage=homepage.clickOnManageNewsTab();
+		managenewspage = homepage.clickOnManageNewsTab();
 		managenewspage.clickOnSearchButton().enterTheNewsToBeSearchedInTheTextFieldProvided()
 				.clickOnSearchSubmitButton();
 		String actual = managenewspage.manageNewsSearchPageDisplayed();

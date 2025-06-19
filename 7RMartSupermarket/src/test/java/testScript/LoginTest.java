@@ -20,7 +20,7 @@ public class LoginTest extends Base {
 		String password = ExcelUtility.getStringData(0, 1, "LoginPage");
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUserNameOnUserNameField(username).enterPasswordOnPasswordField(password);
-		homepage=loginpage.clickOnSignInButton();
+		homepage = loginpage.clickOnSignInButton();
 		// boolean isDashboardDisplayed=loginpage.dashboardDisplayed();
 		// Assert.assertTrue(isDashboardDisplayed, "User was unable to login with valid
 		// credentails");
@@ -66,7 +66,8 @@ public class LoginTest extends Base {
 	@DataProvider(name = "logindata")
 	public Object[][] getDataFromDataProvider() {
 		return new Object[][] { new Object[] { "Test1", "Test2" }, new Object[] { "Test3", "Test4" } };
-		//or we can pass values through excel file
-		//return new Object[][] { new Object[] {  ExcelUtility.getStringData(2, 0, "LoginPage")};
+		// or we can pass values through excel file
+		// return new Object[][] { new Object[] { ExcelUtility.getStringData(2, 0,
+		// "LoginPage")};
 	}
 }

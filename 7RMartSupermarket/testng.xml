@@ -10,8 +10,10 @@
 		<classes>
 			<class name="testScript.ManageNewsTest">
 				<methods>
-					<include name="verifyThatUserIsAbleToAddNewNewsInTheApplication"></include>
-					<include name="verifyThatUserIsAbleToSearchAndFindTheAddedNews"></include>
+					<include
+						name="verifyThatUserIsAbleToAddNewNewsInTheApplication"></include>
+					<include
+						name="verifyThatUserIsAbleToSearchAndFindTheAddedNews"></include>
 				</methods>
 			</class>
 

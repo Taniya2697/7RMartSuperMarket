@@ -16,7 +16,7 @@ public class ManageNewsPage {
 	}
 
 	// Add new news web elements
-	
+
 	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/news/add']")
 	private WebElement newbutton;
 	@FindBy(xpath = "//textarea[@id='news']")
@@ -35,8 +35,6 @@ public class ManageNewsPage {
 	private WebElement searchsubmitbutton;
 	@FindBy(xpath = "//td[text()='Heavy Rainfall Expected Tommorrow']")
 	private WebElement searchresult;
-
-	
 
 	public ManageNewsPage clickonNewButtonToAddNewNews() {
 		newbutton.click();
