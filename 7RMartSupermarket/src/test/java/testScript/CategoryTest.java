@@ -45,8 +45,8 @@ public class CategoryTest extends Base {
 		loginpage.enterUserNameOnUserNameField(username).enterPasswordOnPasswordField(password);
 		homepage = loginpage.clickOnSignInButton();
 
-		CategoryPage categorypage = new CategoryPage(driver);
-		homepage.clickOnManageCategoryTab();
+		CategoryPage categorypage;
+		categorypage=homepage.clickOnManageCategoryTab();
 		categorypage.clickOntheSearchButtonFromListCategoriesPage().enterTheKeywordToBeSearchedInTheCategoryTextField()
 				.clickOnSearchButtonToIntiliazeSearchingTheEnteredKeyword();
 		String actual = categorypage.listCategoriesPageDisplayed();

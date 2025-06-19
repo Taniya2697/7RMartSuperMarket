@@ -23,20 +23,14 @@ public class AdminUsersTest extends Base {
 		loginpage.enterUserNameOnUserNameField(username).enterPasswordOnPasswordField(password);
 		homepage = loginpage.clickOnSignInButton();
 
-		AdminUsersPage adminuserspage = new AdminUsersPage(driver);
-		homepage.clickOnAdminUsersMoreInfoTab();
+		AdminUsersPage adminuserspage;
+		adminuserspage = homepage.clickOnAdminUsersMoreInfoTab();
 		RandomDataUtility random = new RandomDataUtility();
 		String usernameadmin = random.createRandomUserName();
 		String passwordadmin = random.createRandomPassword();
 		adminuserspage.clickOnNewButtonToAddNewAdminUser().enterTheAdminUserNameInTheUserNameField(usernameadmin)
 				.enterTheAdminPasswordInPasswordField(passwordadmin).selectTheAdminUserTypeFromTheDropDownList()
 				.saveTheDetailsEnteredOfNewUser();
-
-		// adminuserspage.enterTheAdminUserNameInTheUserNameField(usernameadmin);
-
-		// adminuserspage.enterTheAdminPasswordInPasswordField(passwordadmin);
-		// adminuserspage.selectTheAdminUserTypeFromTheDropDownList();
-		// adminuserspage.saveTheDetailsEnteredOfNewUser();
 		boolean isAdminUsersDisplayed = adminuserspage.alertUserCreatedSuccessfullyDisplayed();
 		Assert.assertTrue(isAdminUsersDisplayed, "User is unable to add new admin user.");
 		/*
@@ -53,14 +47,13 @@ public class AdminUsersTest extends Base {
 		String password = ExcelUtility.getStringData(0, 1, "LoginPage");
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUserNameOnUserNameField(username).enterPasswordOnPasswordField(password);
-		homepage=loginpage.clickOnSignInButton();
+		homepage = loginpage.clickOnSignInButton();
 
 		AdminUsersPage adminuserspage = new AdminUsersPage(driver);
-	    homepage.clickOnAdminUsersMoreInfoTab();
+		homepage.clickOnAdminUsersMoreInfoTab();
 		adminuserspage.clickTheSearchButtonOnAdminUsersPage().enterTheUsernameTobeSearchedInTheUsernameField()
-		.selectTheUserTypeToBeSearchedFromTheUserTypeDropDown()
-		.clickOnSearchButton();
-		
+				.selectTheUserTypeToBeSearchedFromTheUserTypeDropDown().clickOnSearchButton();
+
 		String actual = adminuserspage.manageUserSearchPageDisplayed();
 		String expected = "Akhil TR";
 		Assert.assertEquals(actual, expected, "user was not able to find the searched result");

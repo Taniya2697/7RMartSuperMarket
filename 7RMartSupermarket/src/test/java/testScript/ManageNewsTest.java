@@ -46,8 +46,8 @@ public class ManageNewsTest extends Base {
 		loginpage.enterUserNameOnUserNameField(username).enterPasswordOnPasswordField(password);
 		homepage = loginpage.clickOnSignInButton();
 
-		ManageNewsPage managenewspage = new ManageNewsPage(driver);
-		homepage.clickOnManageNewsTab();
+		ManageNewsPage managenewspage;
+		managenewspage=homepage.clickOnManageNewsTab();
 		managenewspage.clickOnSearchButton().enterTheNewsToBeSearchedInTheTextFieldProvided()
 				.clickOnSearchSubmitButton();
 		String actual = managenewspage.manageNewsSearchPageDisplayed();
